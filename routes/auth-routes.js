@@ -18,11 +18,11 @@ router.get('/logout', (req, res) => {
 // auth with oauth2
 
 router.get('/arion',
-  passport.authenticate('oauth2'));
+  passport.authenticate('oidc'));
 
 
 router.get('/example/callback',
-  passport.authenticate('oauth2', { failureRedirect: '/' }),
+  passport.authenticate('oidc', { failureRedirect: '/' }),
   function(req, res) {
 
     // Successful authentication, redirect home.
